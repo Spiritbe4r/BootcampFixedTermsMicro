@@ -1,0 +1,40 @@
+spring:
+
+    profiles:
+        active: dev
+
+
+---
+spring:
+
+    config:
+        activate:
+            on-profile: prod
+
+    data:
+        mongodb:
+
+            uri: mongodb+srv://spiritbear:Cuymagic321@mycluster.s22zz.mongodb.net/fixedterms?retryWrites=true&w=majority
+
+        mvc:
+            pathmatch:
+                matching-strategy: ant-path-matcher
+
+microservices-urls:
+    api-client: ${API_CLIENT_CONFIG}
+
+---
+spring:
+    application:
+        name: fixedterms-microservice
+
+
+    config:
+        activate:
+            on-profile: dev
+
+        import: optional:configserver:http://localhost:8888
+
+        mvc:
+            pathmatch:
+                matching-strategy: ant-path-matcher
