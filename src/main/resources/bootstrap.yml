@@ -1,7 +1,7 @@
 spring:
 
     profiles:
-        active: dev
+        active: prod
 
 
 ---
@@ -22,6 +22,8 @@ spring:
 
 microservices-urls:
     api-client: ${API_CLIENT_CONFIG}
+    api-credit: ${API_CREDIT_CONFIG}
+    api-creditcard: ${API_CREDITCARD_CONFIG}
 
 ---
 spring:
